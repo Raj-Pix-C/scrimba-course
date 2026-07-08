@@ -170,6 +170,29 @@
                 margin-top: 18vh;
                 margin-bottom: 18vh;
             }
+
+            .article-page{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: auto;
+                margin: 0;
+            }
+
+            .article-c1{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                overflow-y: auto;
+                background: linear-gradient(45deg, #f8f6f5, #c6dcff);
+            }
+
+            .article-c2{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                overflow-y: auto;
+                background: linear-gradient(135deg, #c6dcff, #f8f6f5);
+            }
         </style>
         
     </head>
@@ -209,22 +232,29 @@
                         </div>
                     </a>
 
-                    <a href="#">
-                        <div class="photo-card non-featured">
-                            <img src="bhawal-national-park.jpeg">
-                            <h4>Gazipur Safari Park</h4>
-                            <h2>My visit on a safari park that is not in Africa</h2>
-                            <p style="font-size: 12px">Featured article</p>
+                    <div class="article-page">
+                        <div class="article-c1">
+                            <a href="#">
+                            <div class="photo-card non-featured">
+                                <img src="bhawal-national-park.jpeg">
+                                <h4>Bhawal National Park</h4>
+                                <h2>The scenery, the greenery is unreal</h2>
+                                <p style="font-size: 12px">Featured article</p>
+                            </div>
+                            </a>
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="photo-card non-featured">
-                            <img src="dream-square-resort.jpg">
-                            <h4>Gazipur Safari Park</h4>
-                            <h2>My visit on a safari park that is not in Africa</h2>
-                            <p style="font-size: 12px">Featured article</p>
+                        
+                        <div class="article-c2">
+                            <a href="#">
+                                <div class="photo-card non-featured">
+                                    <img src="dream-square-resort.jpg">
+                                    <h4>Dream Square Resort</h4>
+                                    <h2>Floating premium resort, the perfect kind for holidays</h2>
+                                    <p style="font-size: 12px">Featured article</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </article>
             </main>
         </div>
