@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business Card</title>
+        <style>
+            .dotted-border{
+                border: 1px dotted blue;
+            }
+
+            .rounded-border{
+                border-radius: 8px;
+            }
+
+            .business-card{
+                display: flex;
+                flex-direction: row;
+                max-width: 430px;
+                max-height: 300px;
+                margin: 0px auto;
+                border-bottom: 6px solid #FA7E61;
+                border-right: 6px solid #FA7E61;
+                background-color: #FEE1C7;
+                color: #4C1E4F;
+                padding: 20px;
+                justify-content: space-between;
+                font-family: 'inconsolata', monospace, sans-serif; 
+                letter-spacing: 1px;
+            }
+
+            .pfp{
+                width: 200px;
+                height: 200px;
+                border-right: 4px solid #B5A886;
+                border-bottom: 4px solid #B5A886;
+            }
+
+            .body-txt-wrp{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: space-evenly;
+                /* text-shadow: 1px 1px 5px #B5A886 ; */
+            }
+
+            p{
+                margin: 0px;
+            }
+            h3{
+                border: 0;
+            }
+
+            .on-hover-pic{
+                transition: all 0.3s ease-in-out;
+            }
+            .on-hover-pic:hover{
+                transform: scale(1.05);
+                box-shadow: 0px 0px 10px #FA7E61;
+            }
+            .on-hover-pic:active{
+                transform: scale(0.95);
+                box-shadow: 0px 0px 10px #FA7E61;
+            }
+            .on-hover-pic:focus{
+                transform: scale(1.05);
+                box-shadow: 0px 0px 10px #FA7E61;
+            }
+
+            .on-hover{
+                transition: all 0.3s ease-in-out;
+            }
+            .on-hover:hover{
+                transform: scale(1.05);
+                text-shadow: 1px 1px 5px #B5A886;
+                
+            }
+            .inconsolata {
+                font-family: "Inconsolata", monospace;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+                font-variation-settings:"wdth" 100;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="business-card rounded-border">
+            <img class="pfp rounded-border on-hover" src="me(cropped).jpg" 
+            alt="Mohammad Al-Amin Raj smiling slightly at camera with his university academic building at the background"/>
+            <div class="body-txt-wrp">
+                <h3 class="on-hover">Mohammad Al-Amin Raj</h3>
+                <p>Newbie Web Developer</p>
+                <p>3<sup>rd</sup> Year Student</p>
+                <p>Dept. CSE, HSTU</p>
+                <h4 class="on-hover">📍Gazipur, Bangladesh</h4>
+            </div>           
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>My Hometown</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+        <style>
+            html, body{
+                height: 100%;
+                margin: 0;
+            }
+
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .layout{
+                display: grid;
+                grid-template-columns: 1fr 1.7fr;
+                height: 100vh;
+            }
+
+            .sidebar{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                background-color: #c6dcff;
+                color: #0053d4;
+            }
+
+            .article{
+                overflow-y: auto;
+                height: 100vh;
+                padding: 0px 10px;
+                background-image: url("gazipur-safari-park.jpg");
+                background-size: cover;
+                background-position: start;
+            }
+
+            .nav-bar{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 16px;
+                font-family: 'Merriweather Sans', sans-serif;
+            }
+
+            .button-container{
+                display: flex;
+                flex-direction: row;
+                gap: 0px;
+                border: none;
+                margin: 0;
+                padding: 8px 16px;
+                background-color: #f8f6f5;
+                border-radius: 24px;
+                font-family: inherit;
+                font-size: 12px;
+            }
+
+            #home-button, #article-button, #about-button{
+                font-family: inherit;
+                font-size: 14px;
+                border: none;
+                background-color: transparent;
+            }
+
+            #home-button:hover, #article-button:hover, #about-button:hover{
+                border: none;
+                background-color: transparent;
+                color: #756f6c;
+                transform: scale(1.05);
+            }
+
+            .sidebar-body{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                /* flex-grow: 1; */
+            }
+
+            #hometown-title{
+                font-size: 56px;
+                font-weight: 900;
+                font-family: 'Montserrat', sans-serif;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .png{
+                display: block;
+                margin: 0 auto;
+                width: 40%;
+                height: auto;
+            }
+
+            #hometown-description{
+                font-size: 18px;
+                font-weight: 700;
+                font-family: 'Merriweather Sans', sans-serif;
+                text-align: center;
+                margin: 0 auto;
+                padding: 40px 40px 0 40px;
+            }
+
+            #sidebar-footer{
+                display: flex;
+                flex-direction: row;
+                padding: 40px 0px 16px 0px;
+                justify-content: center;
+                align-items: center;
+                padding: 16px;
+            }
+
+            #footer-text{
+                font-size: 14px;
+                font-weight: 700;
+                font-family: 'Merriweather Sans', sans-serif;
+                text-align: center;
+                margin-left: 8px;
+            }
+
+
+            .photo-card{
+                display: flex;
+                flex-direction: column;
+                height: 460px;
+                width: 369px;
+                align-items: center;
+                justify-content: center;
+                background-color: #f8f6f5;
+                padding: 16px;
+                margin-bottom: 16px;
+                font-family: 'Merriweather Sans', sans-serif;
+            }
+
+            .photo-card img{
+                width: 348px;
+                height: 266px;
+                border-radius: 8px 24px;
+            }
+
+            #featured-photo{
+                display: flex;
+                flex-direction: column; 
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 18vh;
+                margin-bottom: 18vh;
+            }
+
+            .non-featured{
+                display: flex;
+                flex-direction: column; 
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 18vh;
+                margin-bottom: 18vh;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <div class="nav-bar">
+                    <div class="button-container">
+                        <button id="home-button">Home</button>
+                        <button id="article-button">Articles</button>
+                        <button id="about-button">About</button>
+                    </div>
+                </div>
+
+                <div id="sidebar-body">
+                    <p id="hometown-title">My Hometown Gazipur</p>
+                    <img class="png" src="Pngtree—hand drawn global travel photo_6244671.png" alt="camera image">
+                    <p id="hometown-description">Stories and photos of ups and down walks in the trails of "Tilla", "Mud houses", "Red soils" and "Extra dense dark greenery"</p>
+                </div>
+
+                <div id="sidebar-footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                    </svg>
+                    <p id="footer-text">Gazipur, Dhaka, Bangaladesh</p>
+                </div>
+            </aside>
+
+            <main class="article">
+                <article>
+                    <a href="#">
+                        <div class="photo-card" id="featured-photo">
+                            <img src="gazipur-cover.webp">
+                            <h4>Gazipur Safari Park</h4>
+                            <h2>My visit on a safari park that is not in Africa</h2>
+                            <p style="font-size: 12px">Featured article</p>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="photo-card non-featured">
+                            <img src="bhawal-national-park.jpeg">
+                            <h4>Gazipur Safari Park</h4>
+                            <h2>My visit on a safari park that is not in Africa</h2>
+                            <p style="font-size: 12px">Featured article</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="photo-card non-featured">
+                            <img src="dream-square-resort.jpg">
+                            <h4>Gazipur Safari Park</h4>
+                            <h2>My visit on a safari park that is not in Africa</h2>
+                            <p style="font-size: 12px">Featured article</p>
+                        </div>
+                    </a>
+                </article>
+            </main>
+        </div>
+    </body>
+</html>

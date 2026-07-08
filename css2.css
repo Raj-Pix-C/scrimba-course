@@ -1,0 +1,26 @@
+body{
+
+    background-color:antiquewhite;
+    font-family: 'Inconsolata', monospace;
+    color: rgb(36, 31, 66);
+    font-size: 20px;
+    font-weight:bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.facts_list{
+    list-style-type: square;
+    text-align: left;
+    align-items: left;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 18px;
+}
