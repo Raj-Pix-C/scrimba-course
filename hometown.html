@@ -175,7 +175,8 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 height: auto;
-                margin: 0;
+                margin: 0 -10px; 
+                /* to remove inherited padding from .article class */
             }
 
             .article-c1{
@@ -192,6 +193,13 @@
                 justify-content: space-between;
                 overflow-y: auto;
                 background: linear-gradient(135deg, #c6dcff, #f8f6f5);
+            }
+
+            .article-c1{
+                background: linear-gradient(45deg, #f3ddd2, #c6dcff);
+            }
+            .article-c2{
+                background: linear-gradient(135deg, #c6dcff, #f3ddd2);
             }
         </style>
         
