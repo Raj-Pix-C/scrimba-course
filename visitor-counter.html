@@ -8,12 +8,12 @@
             body{
                 display: flex;
                 flex-direction: column;
-                justify-content: start;
+                justify-content: space-evenly;
                 align-items: center;
                 position: relative;
                 text-align: center;
-                height: 100vh;
-                width: 100vw;
+                height: 50vh;
+                width: 50vw;
                 margin: 0;
                 padding: 20px;
                 font-family: 'Inconsolata', 'Happy Monkey', monospace;
@@ -32,7 +32,7 @@
                 opacity: 0.5;
                 z-index: -1;
             }
-            p{
+            p header{ 
                 font-size: 40px;
                 text-shadow: 0 0 10px white;
                 font-weight: bold;
@@ -41,15 +41,16 @@
                 display: block;
                 font-size: 100px;
                 text-shadow: 0 0 10px #f8f6f5;
-                background: linear-gradient(45deg, white, grey);
+                /* background: linear-gradient(45deg, white, grey); */
                 font-weight: 600;
                 border-bottom: 2px solid #333;
                 border-top: 2px solid #333;
+                /* margin-bottom: 20px; */
             }
-            #inc-btn, #save-btn{
+            #inc-btn, #save-btn, #reset-btn{
                 display:flex;
                 float: left;
-                margin: 20px 10px;
+                /* margin: 10px; */
                 padding: 8px 16px;
                 font-size: 18px;
                 border: 1.5px solid #333;
@@ -61,10 +62,13 @@
     </head>
 
     <body>
-        <p>Visitor Entered the park</p>
+        <p id="header">Visitor Entered the park</p>
         <span id="counter"></span>
         <button id="inc-btn" onclick="increment()">Increment</button>
         <button id="save-btn" onclick="save()">Save</button>
+        <button id="reset-btn" onclick="errormsg()">Reset</button>
+        <p id="prev-saves">Previous saves: </p>
+        <p id="error"></p>
     </body>
     <script src="script.js"></script>
 </html>

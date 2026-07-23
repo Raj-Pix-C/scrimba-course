@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome Message</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <p id="wc-el"></p>
+
+        <span id="n1">
+            <input type="number" id="inp" >
+        </span>
+        <br>
+        <button id="add" onclick="add()">+</button>
+        <button id="sub" onclick="sub()">-</button>
+        <button id="mpy" onclick="mpy()">*</button>
+        <button id="div" onclick="div()">/</button>
+        <button id="eq" onclick="res()">=</button>
+        <button id="reset" onclick="reset()">CE</button>
+
+
+
+        <script>
+            let welcomeEl = document.getElementById("wc-el");
+            let name = 'Raj';
+            let greeting = `Welcome back, ${name}!`;
+
+            welcomeEl.textContent = greeting;
+            welcomeEl.textContent += '👋';
+
+            let num1 = document.getElementById("inp");
+            let result = 0;
+
+            function getInputValue(){
+                return Number(num1.value);
+            }
+
+            function showResult(){
+                welcomeEl.textContent = result;
+            }
+
+            function add(){
+                result += getInputValue();
+                showResult();
+            }
+            function sub(){
+                result -= getInputValue();
+                showResult();
+            }
+            function div(){
+                let value = getInputValue();
+                if (value !== 0) {
+                    result /= value;
+                    showResult();
+                }
+            }
+            function mpy(){
+                result *= getInputValue();
+                showResult();
+            }
+            function res(){
+                showResult();
+            }
+            function reset(){
+                result = 0;
+                num1.value = "";
+                showResult();
+            }
+
+            showResult();
+        </script>
+    </body>
+</html>

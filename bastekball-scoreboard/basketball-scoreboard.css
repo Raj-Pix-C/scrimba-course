@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'inconsolata', monospace;
+    src: url('./Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'nasalization';
+    src: url("./Nasalization Rg.otf") format('opentype');
+}
+
+body{
+    display: block;
+    margin: 20vh auto;
+    background: linear-gradient(to left,#e4f0e9, #d9e9df);
+    height: 40vh;
+    width: 50vw;
+    font-family: inconsolata, monospace;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 60vh;
+    border: 6px solid #fff;
+    border-radius: 24px;
+    box-shadow: 0px 0px 20px 1px #afb3c0;
+    font-family: inconsolata, monospace;
+    background: #242b4b;
+}
+
+/* #home{
+    
+}
+
+#away{
+
+} */
+
+.grp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    font-family: inconsolata, monospace;
+    
+}
+
+.hat{
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-stretch: expanded;
+    color: #f2f2f9;
+    font-size: 72px;
+    margin: 0;
+}
+
+.score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a0307;
+    color: #e9435d;
+    font-size: 96px;
+    font-family: nasalization, monospace;
+    width: 50%;
+    height: 30%;
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn-wrap{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+.btn{
+    background: transparent;
+    border-left: 2px solid #afb3c0;
+    border-right: 2px solid #afb3c0;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 4px;
+    color: #afb3c0;
+    font-family: nasalization, monospace;
+    font-size: 24px;
+    height: 46px;
+    width: 46px;
+    margin: 0;
+    padding: 0;
+}
+
+.additional{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#reset{
+    border: none;
+    width: 100%;
+    color: #f2f2f9;
+    font-family: inconsolata, monospace;
+    text-align: center;
+}

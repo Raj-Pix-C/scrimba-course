@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basketball Scorecard</title>
+        <link rel="stylesheet" href="basketball-scoreboard.css">
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="home" class="grp">
+                <p class="hat">HOME</p>
+                <div id="home-score" class="score">0</div>
+                <div class="btn-wrap">
+                    <button class="btn" id="plus1">+1</button>
+                    <button class="btn" id="plus2">+2</button>
+                    <button class="btn" id="plus3">+3</button>
+                </div>
+            </div>
+
+            <div id="away" class="grp">
+                <p class="hat">AWAY</p>
+                <div id="away-score" class="score">0</div>
+                <div class="btn-wrap">
+                    <button class="btn" id="away-plus1">+1</button>
+                    <button class="btn" id="away-plus2">+2</button>
+                    <button class="btn" id="away-plus3">+3</button>
+                </div>
+            </div>
+
+            <div id="additional">
+                
+                <button id="reset" class="btn hat">NEW GAME</button>
+            </div>
+        </div>
+        <script src="scorecard.js"></script>
+    </body>
+</html>
