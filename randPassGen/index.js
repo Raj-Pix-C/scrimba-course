@@ -18,6 +18,14 @@ let usedIndices = new Set();
 
 
 
+function reset(){
+    usedIndices.clear();
+    includeSymbols = true;
+    includeNumbers = true;
+    providedLength = defaultLength;
+}
+
+
 function generatePassword(givenLength){
     let len = 0;
     let password = "";
@@ -51,7 +59,8 @@ function getRandomChar(){
 }
     
 generateBtn.addEventListener("click", function(){
-    usedIndices.clear();
+    reset();
+
 
     const length = document.querySelector("input[name='len']:checked");
     const selectedLength = length ? parseInt(length.value, 10): defaultLength;
@@ -81,14 +90,3 @@ password2.addEventListener("click", function(){
         console.error("Failed to copy password: ", err);
     });
 });
-
-/**
- * the program flow starts here
- */
-
-usedIndices.clear();
-
-password1.textContent = "password1";
-password2.textContent = "password2";
-
-
