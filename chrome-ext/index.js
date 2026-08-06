@@ -10,18 +10,24 @@ const ulEl = document.querySelector('#ul-el');
 inputBtnEl.addEventListener("click", () => {
     if(!myLeads.has(lead) && lead !== ""){
         myLeads.add(lead);
-        // ulEl.innerHTML += `<li>${lead}</li>`;
+        ulEl.innerHTML += `
+            <li>
+                <a href="${lead}" target="_blank" >
+                    ${lead}
+                </a>
+            </li>`;
 
         // // alt way //
-        const li = document.createElement("li");
-        li.textContent = lead;
-        ulEl.append(li);
+        // const li = document.createElement("li");
+        // li.textContent = lead;
+        // ulEl.append(li);
     }    
-    console.log(myLeads);
 
     // for(let i = 0; i < myLeads.size; i++){
     //     console.log(Array.from(myLeads)[i]);
     // }
+
+    inputEl.value = "";
 
 });
 
