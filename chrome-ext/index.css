@@ -1,0 +1,40 @@
+:root{
+    --green: #5f9341;
+    --off-white: #f8f6f5;
+    --white: #ffffff;
+}
+
+
+body{
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--off-white);
+}
+
+.container{
+    display: block;
+    float: left;
+    width: 100%;
+
+}
+
+#input-el{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid var(--green);
+    margin: 0 0 4px 0;
+    line-height: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#input-btn{
+    padding: 10px 20px;
+    border: none;
+    color: var(--white);
+    line-height: 20px;
+    font-size: 16px;
+    background-color: var(--green);
+    font-weight: bold;
+}
