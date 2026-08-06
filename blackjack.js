@@ -13,6 +13,29 @@ let newCardBtn = document.getElementById("new-card-btn");
 let msgEl = document.getElementById("msg-el");
 let cardsEl = document.getElementById("cards-el");
 let sumEl = document.querySelector("#sum-el");
+let playerEl = document.querySelector("#player");
+
+let playerChips = 0;
+let playerName = "Raj";
+
+let playerObj = {
+    name: playerName,
+    chips: playerChips,
+
+    greetPlayer: function(){
+        return "Welcome, " + this.name + "! You have $" + this.chips + " chips.";
+    },
+
+    addWinnings: function(amount){
+        this.chips += amount*2;
+    },
+
+    updateChips: function(amount){
+        playerEl.textContent = "You have $" + this.chips + " chips.";
+    }
+};
+
+playerEl.textContent = playerObj.greetPlayer();
 
 
 
@@ -35,6 +58,8 @@ function startGame(){
     else if (sum === 21){
         msg = "You've got Blackjack!\nYou win!";
         hasBJ = true;
+        playerObj.addWinnings(10);
+        playerObj.updateChips();
     }
     else{
         msg = "You're out of the game!\nYou lose!";    
@@ -42,7 +67,7 @@ function startGame(){
     }
 
     msgEl.textContent = msg + '\n';
-console.log(cards);
+// console.log(cards);
 }
 
 function getRand(){
@@ -66,6 +91,8 @@ function newCard(){
         else if (sum === 21){
             msg = "You've got Blackjack!\nYou win!";
             hasBJ = true;
+            playerObj.addWinnings(10);
+            playerObj.updateChips();
         }
         else{
             msg = "You're out of the game!\nYou lose!";
@@ -179,3 +206,84 @@ const mySoftSkills = [
 
 
 
+// person = {
+//     name: "raj",
+//     age: 25,
+//     country: "BD",
+
+//     logdata: function(){
+//         console.log(`${this.name} is ${this.age} years old and lives in ${this.country}\n\n\nbleugh`);
+//     }
+// };
+
+// let ticket = {
+//     discountTxt: "",
+//     addDiscount: function(Person){
+//         if(Person.age < 6){
+//             this.discountTxt = "Free";
+//         }
+//         else if(Person.age >= 6 && Person.age < 18){
+//             this.discountTxt = "Child Discount";
+//         }
+//         else if(Person.age >= 18 && Person.age < 27){
+//             this.discountTxt = "Student Discount";
+//         }
+//         else if(Person.age >= 27 && Person.age < 67){
+//             this.discountTxt = "Full price";
+//         }
+//         else{
+//             this.discountTxt = "Senior Citizen Discount";
+//         }
+
+//         console.log(`Ticket for ${Person.name} (${Person.age} years old): ${this.discountTxt}`);
+//     }
+// }
+
+// ticket.addDiscount(person);
+
+
+/** rock paper scissors */
+
+// let throwHands = ["rock", "paper", "scissors"];
+
+// let throwRandHand = function(){
+//     let i = Math.floor(Math.random()*3);
+//     return throwHands[i];
+// }
+
+// const myThrow = throwRandHand();
+
+// const computerThrow = throwRandHand();
+// console.log(myThrow);
+// console.log(computerThrow);
+
+// if(myThrow === computerThrow){
+//     console.log("It's a tie!");
+// }
+// else if((myThrow === "rock" && computerThrow === "scissors") || 
+//         (myThrow === "paper" && computerThrow === "rock") || 
+//         (myThrow === "scissors" && computerThrow === "paper")){
+//     console.log("You win!");
+// }
+// else{
+//     console.log("You lose!");
+// }
+
+
+
+
+let fruits = ["🍎", '🍊',"🍎", "🍎", "🍎", '🍊'];
+let appleShelf = [];
+let orangeShelf = [];
+
+for(let i = 0;i < fruits.length;i++){
+    if(fruits[i] === "🍎"){
+        appleShelf.push([fruits[i], i]);
+    }
+    else{
+        orangeShelf.push([fruits[i], i]);
+    }
+}
+
+console.log("Apple Shelf: ", appleShelf);
+console.log("Orange Shelf: ", orangeShelf);

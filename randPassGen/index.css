@@ -1,0 +1,119 @@
+:root{
+    --bg-color: rgb(6, 6, 43);
+    --gray: #6c757d;
+    --green: #28a745;
+    --red: #dc3545;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    height: 95vh;
+    background-color: var(--gray);
+    color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 50vw;
+    max-height: 50vh;
+    padding: 10% 5% ;
+    border: 4px solid white;
+    border-radius: 12px;
+    background-color: var(--bg-color);
+}
+
+h1{
+    font-family:'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+h3{
+    font-family: arial, sans-serif;
+    margin-bottom: 40px;
+    color: var(--gray);
+}
+
+#title{
+    color: white;
+}
+#title2{
+    color: var(--green);
+}
+
+.btn{
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: var(--green);
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#what{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#password-length{
+    width: 60%;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+#passwords-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#rand-pass-gen-btn{
+    width: 60%;
+    padding: 8px;
+}
+
+#gen1-btn{
+    width: 45%;
+    padding: 8px;
+}
+
+#gen2-btn{
+    width: 45%;
+    padding: 8px;
+}
+
+#separator{
+    width: 100%;
+    border-bottom: 1px solid var(--gray);
+    margin: 40px 0;
+}
+
+#options{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: arial, sans-serif;
+    margin: 20px 0;
+}
