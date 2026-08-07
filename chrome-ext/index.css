@@ -30,14 +30,23 @@ body{
     box-sizing: border-box;
 }
 
-#input-btn{
+.btn{
     padding: 10px 20px;
     border: none;
-    color: var(--white);
     line-height: 20px;
     font-size: 16px;
-    background-color: var(--green);
     font-weight: bold;
+}
+
+#input-btn{
+    color: var(--white);
+    background-color: var(--green);
+}
+
+#del-btn{
+    color: var(--green);
+    background-color: var(--white);
+    border: 1px solid var(--green);
 }
 
 #ul-el{
