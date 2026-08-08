@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Random Password Generator",
+    "version": "1.0",
+    "description": "A simple chrome extension to generate not storing random passwords",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    }
+}

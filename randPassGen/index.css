@@ -12,6 +12,7 @@ body{
     justify-content: center;
     width: 95vw;
     height: 95vh;
+    min-width: 400px;
     background-color: var(--gray);
     color: white;
 }
@@ -20,12 +21,11 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    max-width: 60vw;
-    max-height: 60vh;
     padding: 10% 5% ;
     border: 4px solid white;
     border-radius: 12px;
     background-color: var(--bg-color);
+    box-sizing: border-box;
 }
 
 h1{

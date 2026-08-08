@@ -43,6 +43,11 @@ body{
     background-color: var(--green);
 }
 
+#tab-btn{
+    color: var(--white);
+    background-color: var(--green);
+}
+
 #del-btn{
     color: var(--green);
     background-color: var(--white);
