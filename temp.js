@@ -34,3 +34,12 @@ function renderImg(images) {
 }
 
 renderImg(imgs);
+
+const buyBtnEl = document.querySelector("#buy-btn");
+const price = "123.4567890";
+let num = Number(price);
+buyBtnEl.textContent = `Buy Now for $${num.toFixed(2)}`;
+buyBtnEl.style.backgroundColor = "green";
+buyBtnEl.addEventListener("dblclick", () => {
+    alert("Thank you for your purchase!");
+});
