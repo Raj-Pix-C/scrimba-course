@@ -24,3 +24,21 @@ body{
     margin-right: 10%;
     font-size: 18px;
 }
+
+#btn{
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 50%;
+}
