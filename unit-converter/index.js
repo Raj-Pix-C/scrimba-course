@@ -8,7 +8,7 @@ let inputVal = 0;
 
 
 
-function renderResult(ipv, len, vol, mass) {
+function renderResult(ipv) {
     lenEl.innerHTML = `<h2>Length (Meter/Feet)</h2>
         <p>${ipv} meters = ${(3.281*ipv).toFixed(3)} feet | 
         ${ipv} feet = ${((1/3.281)*ipv).toFixed(3)} meters</p>
@@ -27,7 +27,6 @@ function renderResult(ipv, len, vol, mass) {
 
 
 
-
 inpEl.addEventListener("input", () => {
     inputVal = parseFloat(inpEl.value);
 });
@@ -39,3 +38,5 @@ convBtnEl.addEventListener("click", () => {
 
     renderResult(inputVal);
 });
+
+renderResult(NaN);
