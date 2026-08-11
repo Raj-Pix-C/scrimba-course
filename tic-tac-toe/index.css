@@ -1,0 +1,63 @@
+:root {
+    --navy : #001f3f;
+    --cyan : #7FDBFF;
+    --darker-grey : #d2d2d2;
+}
+
+@font-face {
+    font-family: inconsolata, monospace;
+    src: url("../Inconsolata-VariableFont_wdth,wght.ttf");
+    font-weight: 900;
+    transform: scaleX(2);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    width: 98vw;
+    background-color: var(--darker-grey);
+    font-family: inconsolata, monospace;
+    color: var(--cyan);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    background: trasparent;
+    border: 5px solid var(--cyan);
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+    background-color: var(--navy);    
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid var(--cyan);
+    font-size: 5rem;
+    color: var(--cyan);
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 0 10px black inset;
+    font-family: inherit;
+}
