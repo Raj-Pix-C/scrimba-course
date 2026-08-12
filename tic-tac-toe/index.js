@@ -1,30 +1,35 @@
 const winningConditions = [
-    '000102',
-    '101112',
-    '202122',
-    '001020',
-    '011121',
-    '021222',
-    '001122',
-    '021120'
+    ['00','01','02'],
+    ['10','11','12'],
+    ['20','21','22'],
+    ['00','10','20'],
+    ['01','11','21'],
+    ['02','12','22'],
+    ['00','11','22'],
+    ['02','11','20']
 ];
 
 let playerA = {
     symbol: 'X',
-    moves: [],
+    moves: new Set(),
     turnCount: 0
 
 };
 
 let playerB = {
     symbol: 'O',
-    moves: [],
+    moves: new Set(),
     turnCount: 0
+
 };
 
 let turn = true;       // means playerA's turn
 let gameStatus = true; // means live game
+let hasWinner = false;
 let occupiedCells = 0;
+
+const totalRow = 8;
+const totalCol = 3;
 
 
 
@@ -39,7 +44,7 @@ function handleTurn(El, cellID) {
     let move = cellID.charAt(4)+cellID.charAt(5);
 
     El.textContent = turn ? playerA.symbol : playerB.symbol;
-    turn ? playerA.moves.push(move) : playerB.moves.push(move);
+    turn ? playerA.moves.add(move) : playerB.moves.add(move);
     turn ? playerA.turnCount++ : playerB.turnCount++;
     occupiedCells++;
 
@@ -47,15 +52,22 @@ function handleTurn(El, cellID) {
 
 function winChecker() {
 
-    for(let i = 0; i < winningConditions.length; i++) {
-        let str = turn ? playerA.moves.sort().join('') : playerB.moves.sort().join('');
+    let player = turn ? playerA : playerB;
 
-        if(str.includes(winningConditions[i])) {
-            console.log(`Player ${turn ? playerA.symbol : playerB.symbol} wins!`);
-            resultEl.textContent = `Player ${turn ? playerA.symbol : playerB.symbol} wins!`;
+    for(let i = 0; i < totalRow; i++) {
+        let matches = 0;
+        for(let j = 0; j < totalCol; j++) {
+            if(player.moves.has(winningConditions[i][j])) {
+                matches++;
+            }
+        }
+        if(matches === totalCol) {
+            resultEl.textContent = `Player ${player.symbol} wins!`;
             gameStatus = false;
+            hasWinner = true;
             return;
         }
+
     }
 
 }
@@ -70,8 +82,8 @@ function drawChecker() {
 }
 
 function resetGame() {
-    playerA.moves = [];
-    playerB.moves = [];
+    playerA.moves = new Set();
+    playerB.moves = new Set();
     playerA.turnCount = 0;
     playerB.turnCount = 0;
     turn = true;
@@ -103,7 +115,7 @@ board.addEventListener('click', (event) => {
                 if(playerA.turnCount >= 3 || playerB.turnCount >= 3) {
                     winChecker();
                 }
-                if(occupiedCells === 9 && gameStatus) {
+                if(occupiedCells === 9 && gameStatus && !hasWinner) {
                     drawChecker();
                 }
 
