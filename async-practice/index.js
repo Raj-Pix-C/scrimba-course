@@ -9,16 +9,16 @@
 
 
 
-const getTodos = (callback) => {
+const getTodos = (resource, callback) => {
     const request = new XMLHttpRequest();
 
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+    request.open('GET', resource);
     request.send();
 
     request.addEventListener('readystatechange', () => {
 
-        const data = JSON.parse(request.responseText);
         if(request.readyState === 4 && request.status === 200) {
+            const data = JSON.parse(request.responseText);
             callback(undefined, data);
         }
         else if(request.readyState === 4){
@@ -33,7 +33,7 @@ const getTodos = (callback) => {
 
 
 
-getTodos( (err, data) => {
+getTodos( "todos/1.json", (err, data) => {
     console.log('callback fired');
     if(err){
         console.log(err);
@@ -41,4 +41,26 @@ getTodos( (err, data) => {
     if(data){
         console.log(data);
     }
+
+   getTodos( "todos/2.json", (err, data) => {
+        console.log('callback fired');
+        if(err){
+            console.log(err);
+        }
+        if(data){
+            console.log(data);
+        }
+
+       getTodos( "todos/3.json", (err, data) => {
+            console.log('callback fired');
+            if(err){
+                console.log(err);
+            }
+            if(data){
+                console.log(data);
+            }
+       });
+   }); 
 });
+
+// example of callback hell //
