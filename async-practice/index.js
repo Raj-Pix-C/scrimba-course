@@ -10,57 +10,58 @@
 
 
 const getTodos = (resource, callback) => {
-    const request = new XMLHttpRequest();
 
-    request.open('GET', resource);
-    request.send();
+    return new Promise ( (resolve, reject) => {
+        const request = new XMLHttpRequest();
 
-    request.addEventListener('readystatechange', () => {
+        request.addEventListener('readystatechange', () => {
+            if(request.readyState === 4 && request.status === 200) {
+                const data = JSON.parse(request.responseText);
+                resolve(data);
+            }
+            else if(request.readyState === 4){
+                reject('could not fetch data', request.status);
+            }
+        });
 
-        if(request.readyState === 4 && request.status === 200) {
-            const data = JSON.parse(request.responseText);
-            callback(undefined, data);
-        }
-        else if(request.readyState === 4){
-            callback('could not fetch data', undefined);
-        }
-
+        request.open('GET', resource);
+        request.send();
     });
+
+
 };
 
 
 
-
-
-
-getTodos( "todos/1.json", (err, data) => {
-    console.log('callback fired');
-    if(err){
-        console.log(err);
-    }
-    if(data){
-        console.log(data);
-    }
-
-   getTodos( "todos/2.json", (err, data) => {
-        console.log('callback fired');
-        if(err){
-            console.log(err);
-        }
-        if(data){
-            console.log(data);
-        }
-
-       getTodos( "todos/3.json", (err, data) => {
-            console.log('callback fired');
-            if(err){
-                console.log(err);
-            }
-            if(data){
-                console.log(data);
-            }
-       });
-   }); 
+getTodos('todos/1.json').then( (data) => {
+    console.log('promise resolved:', data);
+}).catch( (errMsg, requestStatus) => {
+    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
 });
 
-// example of callback hell //
+
+getTodos('todos/2.json').then( (data) => {
+    console.log('promise resolved:', data);
+}).catch( (errMsg, requestStatus) => {
+    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
+});
+
+
+getTodos('todos/3.json').then( (data) => {
+    console.log('promise resolved:', data);
+}).catch( (errMsg, requestStatus) => {
+    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
+});
+
+
+getTodos('todos/4.json').then( (data) => {
+    console.log('promise resolved:', data);
+}).catch( (errMsg, requestStatus) => {
+    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
+});
+
+getTodos('https://jsonplaceholder.typicode.com/todos/4').then( (data) => {
+    console.log('promise resolved:', data);
+}).catch( (errMsg, requestStatus) => {
+    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
+});
