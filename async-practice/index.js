@@ -33,35 +33,40 @@ const getTodos = (resource, callback) => {
 
 
 
-getTodos('todos/1.json').then( (data) => {
-    console.log('promise resolved:', data);
-}).catch( (errMsg, requestStatus) => {
+// this is promise chaining. //
+
+getTodos('todos/1.json')
+.then( (data1) => {
+    console.log('promise 1 resolved:', data1);
+
+    return  getTodos('todos/2.json');
+})
+.then( (data2) => {
+    console.log('promise 2 resolved:', data2);
+
+    return  getTodos('todos/3.json');
+})
+.then( (data3) => {
+    console.log('promise 3 resolved:', data3);
+
+    return  getTodos('todos/4.json');
+})
+.then( (data4) => {
+    console.log('promise 4 resolved:', data4);
+
+    return  getTodos('https://jsonplaceholder.typicode.com/todos/4');
+})
+.then( (data4) => {
+    console.log('promise 4 resolved from remote:', data4);
+})
+.catch( (errMsg, requestStatus) => {
     console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
 });
 
 
-getTodos('todos/2.json').then( (data) => {
-    console.log('promise resolved:', data);
-}).catch( (errMsg, requestStatus) => {
-    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
-});
 
-
-getTodos('todos/3.json').then( (data) => {
-    console.log('promise resolved:', data);
-}).catch( (errMsg, requestStatus) => {
-    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
-});
-
-
-getTodos('todos/4.json').then( (data) => {
-    console.log('promise resolved:', data);
-}).catch( (errMsg, requestStatus) => {
-    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
-});
-
-getTodos('https://jsonplaceholder.typicode.com/todos/4').then( (data) => {
-    console.log('promise resolved:', data);
-}).catch( (errMsg, requestStatus) => {
-    console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
-});
+// getTodos('https://jsonplaceholder.typicode.com/todos/4').then( (data) => {
+//     console.log('promise resolved:', data);
+// }).catch( (errMsg, requestStatus) => {
+//     console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
+// });
