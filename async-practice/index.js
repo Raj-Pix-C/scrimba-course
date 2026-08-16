@@ -61,6 +61,8 @@ getTodos('todos/1.json')
 })
 .catch( (errMsg, requestStatus) => {
     console.log(`promise rejected: ${errMsg}, request status: ${requestStatus}`);
+    // i feel like i should do fallback strategies here, 
+    // like retrying the request or using cached data if available.
 });
 
 
