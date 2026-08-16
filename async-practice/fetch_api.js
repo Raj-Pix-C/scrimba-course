@@ -1,29 +1,27 @@
-
-
-// fetch('todos/1.json')
-// .then( (response) => {
-//     console.log('resolved: ', response);
-//     return response.json();
-// })
-// .then( (data) => {
-//     console.log('data: ', data);
-// })
-// .catch( (err) => {
-//     console.log('rejected: ', err);
-// });
-
+const todoResource = ['todos/1.json', 'todos/2.json', 'todos/3.json', 'todos/4.json', 'https://jsonplaceholder.typicode.com/todos/4'];
 
 const getTodos = async (resource) => {
     const response = await fetch(resource);
+    
+    if(response.status !== 200) {
+        throw new Error('could not fetch data');
+    }
+    
     const data = await response.json();
-
     return data;
 };
 
-getTodos('todos/1.json')
-    .then( (data) => {
-        console.log('resolved: ', data);
-    })
-    .catch( (err) => {
-        console.log('rejected: ', err);
-    });   
+
+const getAllTodos = () => {
+    for(const res of todoResource) {
+        getTodos(res)
+            .then( (data) => {
+                console.log('resolved: ', data);
+            })
+            .catch( (err) => {
+                console.log('rejected: ', err);
+            });
+    }
+}
+
+getAllTodos();
