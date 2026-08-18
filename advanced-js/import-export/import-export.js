@@ -18,4 +18,4 @@ import('./data.js')
 
 
 
-console.log(LTP);
+console.log(LTP); // invalid??
