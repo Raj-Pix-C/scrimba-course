@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #007bff;
+            --bg-gradient: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+        }
+
+        .weather-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .city-name {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .temp {
+            font-size: 3.5rem;
+            margin: 10px 0;
+            font-weight: 300;
+        }
+
+        .weather-description {
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .col {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .error {
+            color: #ff4757;
+            display: none; /* Hidden by default */
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HTML STRUCTURE -->
+    <div class="weather-card">
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter City 
+Name">
+            <button onclick="getWeather()">Search</button>
+        </div>
+
+        <h2 class="city-name" id="city">New York</h2>
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" 
+class="icon" id="weather-icon" alt="weather">
+        <h1 class="temp" id="temp">72°F</h1>
+        <p class="weather-description" id="description">Clear Sky</p>
+
+        <div class="details">
+            <div class="col">
+                <img src="https://openweathermap.org/img/wn/01d@2x.png" 
+class="icon" id="humidity-icon">
+                <div>
+                    <p id="humidity">45%</p>
+                    <small>Humidity</small>
+                </div>
+            </div>
+            <div class="col">
+                <img src="https://openweathermap.org/img/wn/01d@2x.png" 
+class="icon" id="wind-icon">
+                <div>
+                    <p id="wind">15 km/h</p>
+                    <small>Wind</small>
+                </div>
+            </div>
+        </div>
+        
+        <p class="error" id="error-msg">City not found!</p>
+    </div>
+
+    <script>
+        /* --- JAVASCRIPT LOGIC --- */
+        
+        // IMPORTANT: Replace this with your actual API Key from 
+OpenWeatherMap
+        const apiKey = "7ff71258e0d1ecd7449e1836bd9ffe51";
+        const apiUrl = 
+"https://api.openweathermap.org/data/2.5/weather?units=metric&appid=";
+
+        const cityElement = document.getElementById("city");
+        const tempElement = document.getElementById("temp");
+        const descElement = document.getElementById("description");
+        const humidityElement = document.getElementById("humidity");
+        const windElement = document.getElementById("wind");
+        const iconElement = document.getElementById("weather-icon");
+        const errorMsg = document.getElementById("error-msg");
+
+        async function getWeather(cityName) {
+            const city = cityName || document.getElementById("city-input").value;
+
+            if (city) {
+                // Fetch data from API
+                try {
+                    const response = await fetch(`${apiUrl}${apiKey}&q=${city}`);
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        updateUI(data);
+                        // Reset error
+                        errorMsg.style.display = "none";
+                        // Update main icon
+                        iconElement.src = 
+`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+                    } else {
+                        throw new Error("API Error");
+                    }
+                } catch (error) {
+                    console.log(error);
+                    errorMsg.style.display = "block";
+                }
+            } else {
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Please enter a city name";
+            }
+        }
+
+function updateUI(data) {
+            cityElement.innerHTML = data.name;
+            tempElement.innerHTML = Math.round(data.main.temp) + "°C";
+            descElement.innerHTML = data.weather[0].description;
+            humidityElement.innerHTML = data.main.humidity + "%";
+            windElement.innerHTML = data.wind.speed + " km/h";
+        }
+
+        document.getElementById("city-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                getWeather();
+            }
+        });
+
+        // Load default city on startup
+        getWeather("New York");
+    </script>
+</body>
+</html>
