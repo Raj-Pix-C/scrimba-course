@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    min-width: 400px;
+    min-height: 400px;
+    height: 98vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 20px;
+}
+
+.stock-card{
+    border: none;
+    border-radius: 10px;
+    background: whitesmoke;
+    color: navy;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: start;
+    min-width: 180px;
+    padding: 20px;
+}
