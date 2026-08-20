@@ -9,13 +9,16 @@
 
 
 const containerEl = document.querySelector('#container');
-console.log(containerEl);
 
 function setElementWithText(el, text, sender, ...receivers) {
     let DOMString = "";
 
     receivers.forEach( (recipant) => {
-        DOMString += `<div><p>Dear ${recipant.name}<br>${text}<br>Best Wishes,<br>${sender}</p></div>`;
+        DOMString += `<div>
+                        <p>
+                            Dear ${recipant.name}<br>${text}<br>Best Wishes,<br>${sender}
+                        </p>
+                     </div>`;
     });
 
     el.innerHTML = DOMString;
