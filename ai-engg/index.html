@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Boilerplate</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+    </head>
+
+    <body>
+        <div id="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+            <div id="inA">
+                <input id="in" type="text" placeholder="MSFT">
+                <button id="add">+</button>
+            </div>
+
+            <div id="outA">
+                <p id="list"></p>
+                <button id="gen">Generate Report</button>
+            </div>
+
+            <div id="loading-panel">
+                                
+            </div>
+
+            <p id="api-message"></p>
+        </div>
+
+        <script src="./stock-ticker.js"></script>
+    </body>
+</html>
