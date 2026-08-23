@@ -1,0 +1,12 @@
+{
+  "name": "wild-horizon-rest-api",
+  "version": "1.0.0",
+  "description": "\"This is a rest api for getting travel locations\"",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raj-Pix-C",
+  "license": "ISC"
+}
