@@ -1,6 +1,7 @@
 import http from 'node:http'
 import getData from './fakedb.js'
 import createRes from './utils/createResponse.js'
+import handleRes from './utils/handleResponse.js'
 
 const PORT = 8000;
 
@@ -19,20 +20,12 @@ const server = http.createServer( async (request, response) => {
     else if(request.url.startsWith('/api/continent') && request.method === 'GET') {
         const Continent = request.url.split('/').pop().toLowerCase();
 
-        res = dest.filter(obj => obj.continent.toLowerCase() === Continent);
-        statusCode = res.length ? 200: 404;
-
-        if(statusCode === 404)
-            res = {error: 'not found', message: 'the requested route does not exist'};
+        ({statusCode, res} = handleRes(dest, Continent, 'continent'));
     }
     else if(request.url.startsWith('/api/country') && request.method === 'GET') {
         const Country = request.url.split('/').pop().toLowerCase();
 
-        res = dest.filter(obj => obj.country.toLowerCase === Country);
-        statusCode = res.length ? 200: 404;
-        
-        if(statusCode === 404)
-            res = {error: 'not found', message: 'the requested route does not exist'};
+        ({statusCode, res} = handleRes(dest, Country, 'country'));
     }
     else {
         statusCode = 404;
