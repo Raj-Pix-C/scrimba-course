@@ -38,6 +38,18 @@ const server = http.createServer(async (request, response) => {
         return;
     }
 
+    if (request.url.startsWith('/api/is_open_to_public') && request.method === 'GET') {
+        const boolStr = request.url.split('/').pop().toLowerCase();
+        const flag = boolStr === 'true' ? true : (boolStr === 'false' ? false : undefined);
+        if(flag === undefined) {
+            createRes(404, type, { error: 'not found', message: 'the requested route does not exist' }, response);
+            return;
+        }
+        const { statusCode, res } = handleRes(dest, { is_open_to_public: flag});
+        createRes(statusCode, type, res, response);
+        return;
+    }
+
     createRes(404, type, { error: 'not found', message: 'the requested route does not exist' }, response);
 });
 
