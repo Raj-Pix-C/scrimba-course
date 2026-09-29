@@ -1,0 +1,41 @@
+.layout-container{
+    height: 100%;
+    margin: 0;
+}
+
+.static-top-bar{
+    height: 10px;
+    padding: 10px;
+}
+
+.golden-ratio-logo{}
+
+.top-bar-header{}
+
+.navbar{
+    height: 10px;
+    padding: 10px;
+}
+
+.body-container{
+    display: grid;
+    grid-template-columns: 1fr 1.61fr;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 100%;
+    background-color: red;
+    color: black;
+    position: sticky;
+    margin: 0;
+    padding: 16px;
+}
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: antiquewhite;
+}
