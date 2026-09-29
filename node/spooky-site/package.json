@@ -1,0 +1,13 @@
+{
+  "name": "spooky-site",
+  "version": "1.0.0",
+  "description": "basic horror story sharing site",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Raj-Pix-C",
+  "license": "ISC"
+}
