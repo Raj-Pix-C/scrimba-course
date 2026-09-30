@@ -43,7 +43,17 @@ body {
 }
 
 .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
     padding: 10px;
+}
+
+#btn-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 20vw;
 }
 
 .body-container {
