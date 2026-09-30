@@ -10,7 +10,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    border: 1px solid black; /* for testing*/
+
     margin: auto;
     padding: 0;
 }
@@ -64,18 +64,32 @@ body {
 }
 
 .main-arti {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: antiquewhite;
-    border: 1px solid black;
-}
-
-.arti-featured {
     display: flex;
     flex-direction: column;
-    border: 1px solid blue; /* for testing*/
+    justify-content: space-evenly;
+    height: 100%;
+    background-color: antiquewhite;
 }
 
-#featured-1 {
-    /* not decided yet*/
+
+#photo-card {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    padding: 16px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#photo-card img {
+    border-radius: 8px 24px;
+    height: 18vh;
+    width: 24vw;
+}
+
+.intro-card {
+    padding: 8px;
+    min-width: 10vw;
+    max-width: 20vw;
 }
