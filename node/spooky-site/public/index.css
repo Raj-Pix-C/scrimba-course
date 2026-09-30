@@ -1,41 +1,81 @@
-.layout-container{
+:root {
+    --red: red;
+}
+
+@font-face {
+    font-family: grotesque; /* random name */
+    src: url(); /* placeholder for font */
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    border: 1px solid black; /* for testing*/
+    margin: auto;
+    padding: 0;
+}
+
+.layout-container {
     height: 100%;
     margin: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 10.5fr;
+    flex-direction: column;
+
 }
 
-.static-top-bar{
-    height: 10px;
-    padding: 10px;
-}
-
-.golden-ratio-logo{}
-
-.top-bar-header{}
-
-.navbar{
-    height: 10px;
-    padding: 10px;
-}
-
-.body-container{
+.static-top-bar {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1.61fr;
+    flex-direction: row ;
+    
 }
 
-.categories{
+.golden-ratio-logo {
+    height: auto;
+    padding: 10px;
+}
+
+.top-bar-header {
+    height: auto;
+    padding: 10px;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.body-container {
+    display: grid;
+    grid-template-columns: 1fr 1.61fr;
+    
+}
+
+.categories {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: left;
     height: 100%;
     background-color: red;
     color: black;
     position: sticky;
     margin: 0;
-    padding: 16px;
 }
 
-article{
+.main-arti {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: antiquewhite;
+    border: 1px solid black;
+}
+
+.arti-featured {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue; /* for testing*/
+}
+
+#featured-1 {
+    /* not decided yet*/
 }
