@@ -49,18 +49,21 @@ body {
 .body-container {
     display: grid;
     grid-template-columns: 1fr 1.61fr;
-    
+    height: 100%;
 }
 
 .categories {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    height: 100%;
+    flex-direction: column;
     background-color: red;
     color: black;
     position: sticky;
     margin: 0;
+    padding: 24px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .main-arti {
